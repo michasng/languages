@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:languages/home_page.dart';
+import 'package:languages/routes/dictionary/dictionary_page.dart';
 
 void main() {
   runApp(const App());
@@ -10,10 +10,15 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Languages',
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: const DictionaryPage(),
+      theme: ThemeData(
+        inputDecorationTheme: const InputDecorationTheme(
+          border: OutlineInputBorder(),
+        ),
+      ),
     );
   }
 }
