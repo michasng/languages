@@ -1,10 +1,10 @@
 enum Language {
-  german('de-DE', 'Deutsch (Deutschland)'),
+  german('de-DE', 'Deutsch'),
   englishUs('en-US', 'English (US)'),
   russian('ru-RU', 'Русский'),
   englishUk('en-GB', 'English (UK)'),
-  spanish('es-ES', 'Español (España)'),
-  french('fr-FR', 'Français (France)'),
+  spanish('es-ES', 'Español'),
+  french('fr-FR', 'Français'),
   hindi('hi-IN', 'हिंदी'),
   indonesian('id-ID', 'Bahasa Indonesia'),
   italian('it-IT', 'Italiano'),
