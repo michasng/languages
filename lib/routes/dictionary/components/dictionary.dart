@@ -25,7 +25,7 @@ class _DictionaryState extends State<Dictionary> {
     );
   }
 
-  void _speak(String word) {}
+  void _speak(String phrase) {}
 
   @override
   Widget build(BuildContext context) {
@@ -34,12 +34,12 @@ class _DictionaryState extends State<Dictionary> {
         TranslationField(
           originLanguage: dictionary.originLanguage,
           targetLanguage: dictionary.targetLanguage,
-          addTranslation: (originWord, targetWord) {
+          addTranslation: (originPhrase, targetPhrase) {
             setState(
               () => dictionary = dictionary.copyWith(
                 translations: Map.unmodifiable({
                   ...dictionary.translations,
-                  originWord: targetWord,
+                  originPhrase: targetPhrase,
                 }),
               ),
             );

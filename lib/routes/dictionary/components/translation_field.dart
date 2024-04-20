@@ -6,7 +6,7 @@ class TranslationField extends StatefulWidget {
   final Language originLanguage;
   final Language targetLanguage;
 
-  final void Function(String originWord, String targetWord) addTranslation;
+  final void Function(String originPhrase, String targetPhrase) addTranslation;
 
   const TranslationField({
     super.key,
@@ -24,8 +24,8 @@ class _TranslationFieldState extends State<TranslationField> {
   final _originTextController = TextEditingController();
   final _targetTextController = TextEditingController();
 
-  String _originWord = '';
-  String _targetWord = '';
+  String _originPhrase = '';
+  String _targetPhrase = '';
 
   void _submit() {
     final formState = _formKey.currentState;
@@ -33,7 +33,7 @@ class _TranslationFieldState extends State<TranslationField> {
     if (formState == null || !formState.validate()) return;
     formState.save();
 
-    widget.addTranslation(_originWord, _targetWord);
+    widget.addTranslation(_originPhrase, _targetPhrase);
     _clear();
   }
 
@@ -62,7 +62,7 @@ class _TranslationFieldState extends State<TranslationField> {
                     }
                     return null;
                   },
-                  onSaved: (value) => _originWord = value ?? '',
+                  onSaved: (value) => _originPhrase = value ?? '',
                 ),
                 TextFormField(
                   controller: _targetTextController,
@@ -75,7 +75,7 @@ class _TranslationFieldState extends State<TranslationField> {
                     }
                     return null;
                   },
-                  onSaved: (value) => _targetWord = value ?? '',
+                  onSaved: (value) => _targetPhrase = value ?? '',
                 ),
               ].separated(const Gap()),
             ),
