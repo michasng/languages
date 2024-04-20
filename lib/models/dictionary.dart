@@ -12,13 +12,13 @@ class Dictionary {
   });
 
   Dictionary copyWith({
-    Language? originLanguageCode,
-    Language? targetLanguageCode,
+    Language? originLanguage,
+    Language? targetLanguage,
     Map<String, String>? translations,
   }) =>
       Dictionary(
-        originLanguage: originLanguageCode ?? originLanguage,
-        targetLanguage: targetLanguageCode ?? targetLanguage,
+        originLanguage: originLanguage ?? this.originLanguage,
+        targetLanguage: targetLanguage ?? this.targetLanguage,
         translations: translations ?? this.translations,
       );
 }
