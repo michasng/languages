@@ -3,6 +3,7 @@ import 'package:get_it/get_it.dart';
 import 'package:languages/models/app_model.dart';
 import 'package:languages/models/language.dart';
 import 'package:languages/routes/dictionary/dictionary_page.dart';
+import 'package:text_to_speech/text_to_speech.dart';
 
 void main() {
   _initDependencies();
@@ -11,12 +12,13 @@ void main() {
 
 void _initDependencies() {
   final getIt = GetIt.I;
-  getIt.registerSingleton<AppModel>(
+  getIt.registerSingleton(
     AppModel(
       languages: (origin: Language.german, target: Language.russian),
       dictionaries: {},
     ),
   );
+  getIt.registerSingleton(TextToSpeech());
 }
 
 class _App extends StatelessWidget {

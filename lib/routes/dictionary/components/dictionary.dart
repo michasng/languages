@@ -4,6 +4,7 @@ import 'package:languages/models/app_model.dart';
 import 'package:languages/models/dictionary.dart' as dictionary_model;
 import 'package:languages/routes/dictionary/components/translation_field.dart';
 import 'package:micha_core/micha_core.dart';
+import 'package:text_to_speech/text_to_speech.dart';
 
 class Dictionary extends StatefulWidget {
   const Dictionary({super.key});
@@ -18,7 +19,13 @@ class _DictionaryState extends State<Dictionary> {
   set dictionary(dictionary_model.Dictionary value) =>
       GetIt.I<AppModel>().activeDictionary = value;
 
-  void _speak(String phrase) {}
+  Future<void> _speak(String phrase) async {
+    final appModel = GetIt.I<AppModel>();
+    final textToSpeech = GetIt.I<TextToSpeech>();
+
+    textToSpeech.setLanguage(appModel.languages.target.code);
+    textToSpeech.speak(phrase);
+  }
 
   @override
   Widget build(BuildContext context) {
