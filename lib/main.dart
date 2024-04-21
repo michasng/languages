@@ -3,22 +3,37 @@ import 'package:get_it/get_it.dart';
 import 'package:languages/models/app_model.dart';
 import 'package:languages/models/language.dart';
 import 'package:languages/routes/dictionary/dictionary_page.dart';
+import 'package:languages/services/local_storage_repository.dart';
+import 'package:localstorage/localstorage.dart';
 import 'package:text_to_speech/text_to_speech.dart';
 
-void main() {
-  _initDependencies();
+void main() async {
+  await _initDependencies();
   runApp(const _App());
 }
 
-void _initDependencies() {
+Future<void> _initDependencies() async {
   final getIt = GetIt.I;
-  getIt.registerSingleton(
-    AppModel(
-      languages: (origin: Language.german, target: Language.russian),
-      dictionaries: {},
+
+  getIt.registerSingletonAsync(() async {
+    await initLocalStorage();
+    return localStorage;
+  });
+  getIt.registerSingletonWithDependencies(
+    () => LocalStorageRepository(
+      localStorage: getIt<LocalStorage>(),
+      storageKey: 'app',
+      defaultFactory: () => AppModel(
+        languages: (origin: Language.german, target: Language.russian),
+        dictionaries: {},
+      ),
+      fromJson: AppModel.fromJson,
     ),
+    dependsOn: [LocalStorage],
   );
   getIt.registerSingleton(TextToSpeech());
+
+  await getIt.allReady();
 }
 
 class _App extends StatelessWidget {

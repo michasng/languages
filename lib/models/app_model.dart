@@ -1,11 +1,13 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:languages/models/dictionary.dart';
 import 'package:languages/models/language.dart';
+import 'package:languages/models/to_json.dart';
 
 part 'app_model.freezed.dart';
+part 'app_model.g.dart';
 
-@unfreezed
-class AppModel with _$AppModel {
+@freezed
+class AppModel with _$AppModel implements ToJson {
   AppModel._();
 
   factory AppModel({
@@ -21,8 +23,9 @@ class AppModel with _$AppModel {
         ),
       );
 
-  set activeDictionary(Dictionary value) => dictionaries = {
-        ...dictionaries.where((item) => item.languages != value.languages),
-        value,
-      };
+  Iterable<Dictionary> get inactiveDictionaries =>
+      dictionaries.where((item) => item.languages != languages);
+
+  factory AppModel.fromJson(Map<String, dynamic> json) =>
+      _$AppModelFromJson(json);
 }

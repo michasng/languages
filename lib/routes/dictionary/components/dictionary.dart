@@ -3,6 +3,7 @@ import 'package:get_it/get_it.dart';
 import 'package:languages/models/app_model.dart';
 import 'package:languages/models/dictionary.dart' as dictionary_model;
 import 'package:languages/routes/dictionary/components/translation_field.dart';
+import 'package:languages/services/local_storage_repository.dart';
 import 'package:micha_core/micha_core.dart';
 import 'package:text_to_speech/text_to_speech.dart';
 
@@ -14,17 +15,26 @@ class Dictionary extends StatefulWidget {
 }
 
 class _DictionaryState extends State<Dictionary> {
-  dictionary_model.Dictionary get dictionary =>
-      GetIt.I<AppModel>().activeDictionary;
-  set dictionary(dictionary_model.Dictionary value) =>
-      GetIt.I<AppModel>().activeDictionary = value;
+  final _appModelRepository = GetIt.I<LocalStorageRepository<AppModel>>();
+  final _textToSpeech = GetIt.I<TextToSpeech>();
+
+  dictionary_model.Dictionary get _dictionary =>
+      _appModelRepository.getOrDefault().activeDictionary;
+
+  set _dictionary(dictionary_model.Dictionary dictionary) =>
+      _appModelRepository.update(
+        (appModel) => appModel.copyWith(
+          dictionaries: {
+            ...appModel.inactiveDictionaries,
+            dictionary,
+          },
+        ),
+      );
 
   Future<void> _speak(String phrase) async {
-    final appModel = GetIt.I<AppModel>();
-    final textToSpeech = GetIt.I<TextToSpeech>();
-
-    textToSpeech.setLanguage(appModel.languages.target.code);
-    textToSpeech.speak(phrase);
+    final appModel = _appModelRepository.getOrDefault();
+    _textToSpeech.setLanguage(appModel.languages.target.code);
+    _textToSpeech.speak(phrase);
   }
 
   @override
@@ -32,18 +42,18 @@ class _DictionaryState extends State<Dictionary> {
     return ListView(
       children: [
         TranslationField(
-          originLanguage: dictionary.languages.origin,
-          targetLanguage: dictionary.languages.target,
+          originLanguage: _dictionary.languages.origin,
+          targetLanguage: _dictionary.languages.target,
           addTranslation: (translation) => setState(
-            () => dictionary = dictionary.copyWith(
+            () => _dictionary = _dictionary.copyWith(
               translations: {
-                ...dictionary.translations,
+                ..._dictionary.translations,
                 translation,
               },
             ),
           ),
         ),
-        for (final translation in dictionary.translations)
+        for (final translation in _dictionary.translations)
           ListTile(
             key: ValueKey(translation),
             title: Text(translation.targetPhrase),
@@ -54,8 +64,8 @@ class _DictionaryState extends State<Dictionary> {
             ),
             trailing: IconButton(
               onPressed: () => setState(
-                () => dictionary = dictionary.copyWith(
-                  translations: dictionary.translations
+                () => _dictionary = _dictionary.copyWith(
+                  translations: _dictionary.translations
                       .where((item) => item != translation)
                       .toSet(),
                 ),
