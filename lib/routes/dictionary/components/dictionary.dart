@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:languages/models/dictionary.dart' as dictionary_model;
 import 'package:languages/models/language.dart';
-import 'package:languages/models/translation.dart';
 import 'package:languages/routes/dictionary/components/translation_field.dart';
 import 'package:micha_core/micha_core.dart';
 
@@ -35,15 +34,12 @@ class _DictionaryState extends State<Dictionary> {
         TranslationField(
           originLanguage: dictionary.originLanguage,
           targetLanguage: dictionary.targetLanguage,
-          addTranslation: (originPhrase, targetPhrase) {
+          addTranslation: (translation) {
             setState(
               () => dictionary = dictionary.copyWith(
                 translations: Set.unmodifiable({
                   ...dictionary.translations,
-                  Translation(
-                    originPhrase: originPhrase,
-                    targetPhrase: targetPhrase,
-                  ),
+                  translation,
                 }),
               ),
             );

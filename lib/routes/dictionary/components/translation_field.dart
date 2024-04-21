@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:languages/models/language.dart';
+import 'package:languages/models/translation.dart';
 import 'package:micha_core/micha_core.dart';
 
 class TranslationField extends StatefulWidget {
   final Language originLanguage;
   final Language targetLanguage;
 
-  final void Function(String originPhrase, String targetPhrase) addTranslation;
+  final void Function(Translation translation) addTranslation;
 
   const TranslationField({
     super.key,
@@ -33,7 +34,12 @@ class _TranslationFieldState extends State<TranslationField> {
     if (formState == null || !formState.validate()) return;
     formState.save();
 
-    widget.addTranslation(_originPhrase, _targetPhrase);
+    widget.addTranslation(
+      Translation(
+        originPhrase: _originPhrase,
+        targetPhrase: _targetPhrase,
+      ),
+    );
     _clear();
   }
 
