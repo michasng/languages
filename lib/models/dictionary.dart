@@ -1,24 +1,14 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:languages/models/language.dart';
+import 'package:languages/models/translation.dart';
 
-class Dictionary {
-  final Language originLanguage;
-  final Language targetLanguage;
-  final Map<String, String> translations;
+part 'dictionary.freezed.dart';
 
-  const Dictionary({
-    required this.originLanguage,
-    required this.targetLanguage,
-    required this.translations,
-  });
-
-  Dictionary copyWith({
-    Language? originLanguage,
-    Language? targetLanguage,
-    Map<String, String>? translations,
-  }) =>
-      Dictionary(
-        originLanguage: originLanguage ?? this.originLanguage,
-        targetLanguage: targetLanguage ?? this.targetLanguage,
-        translations: translations ?? this.translations,
-      );
+@freezed
+class Dictionary with _$Dictionary {
+  const factory Dictionary({
+    required Language originLanguage,
+    required Language targetLanguage,
+    required Set<Translation> translations,
+  }) = _Dictionary;
 }

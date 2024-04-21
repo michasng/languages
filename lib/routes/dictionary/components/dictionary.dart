@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:languages/models/dictionary.dart' as dictionary_model;
 import 'package:languages/models/language.dart';
+import 'package:languages/models/translation.dart';
 import 'package:languages/routes/dictionary/components/translation_field.dart';
 import 'package:micha_core/micha_core.dart';
 
@@ -21,7 +22,7 @@ class _DictionaryState extends State<Dictionary> {
     dictionary = dictionary_model.Dictionary(
       originLanguage: Language.german,
       targetLanguage: Language.russian,
-      translations: Map.unmodifiable({}),
+      translations: Set.unmodifiable({}),
     );
   }
 
@@ -37,28 +38,32 @@ class _DictionaryState extends State<Dictionary> {
           addTranslation: (originPhrase, targetPhrase) {
             setState(
               () => dictionary = dictionary.copyWith(
-                translations: Map.unmodifiable({
+                translations: Set.unmodifiable({
                   ...dictionary.translations,
-                  originPhrase: targetPhrase,
+                  Translation(
+                    originPhrase: originPhrase,
+                    targetPhrase: targetPhrase,
+                  ),
                 }),
               ),
             );
           },
         ),
-        for (final translation in dictionary.translations.entries)
+        for (final translation in dictionary.translations)
           ListTile(
             key: ValueKey(translation),
-            title: Text(translation.value),
-            subtitle: Text(translation.key),
+            title: Text(translation.targetPhrase),
+            subtitle: Text(translation.originPhrase),
             leading: IconButton(
-              onPressed: () => _speak(translation.value),
+              onPressed: () => _speak(translation.targetPhrase),
               icon: const Icon(Icons.volume_up),
             ),
             trailing: IconButton(
               onPressed: () => setState(() {
                 dictionary = dictionary.copyWith(
-                  translations: Map.unmodifiable(
-                    {...dictionary.translations}..remove(translation.key),
+                  translations: Set.unmodifiable(
+                    dictionary.translations
+                        .where((item) => item != translation),
                   ),
                 );
               }),
