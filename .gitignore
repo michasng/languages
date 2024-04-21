@@ -32,7 +32,10 @@ migrate_working_dir/
 /build/
 
 # Generated dart files
-*.freezed.dart
+**.freezed.dart
+**.g.dart
+**.gr.dart
+**/generated_plugin_registrant.dart
 
 # Symbolication related
 app.*.symbols
