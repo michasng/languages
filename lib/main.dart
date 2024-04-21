@@ -1,12 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
+import 'package:languages/models/app_model.dart';
+import 'package:languages/models/language.dart';
 import 'package:languages/routes/dictionary/dictionary_page.dart';
 
 void main() {
-  runApp(const App());
+  _initDependencies();
+  runApp(const _App());
 }
 
-class App extends StatelessWidget {
-  const App({super.key});
+void _initDependencies() {
+  final getIt = GetIt.I;
+  getIt.registerSingleton<AppModel>(
+    AppModel(
+      languages: (origin: Language.german, target: Language.russian),
+      dictionaries: {},
+    ),
+  );
+}
+
+class _App extends StatelessWidget {
+  const _App();
 
   @override
   Widget build(BuildContext context) {

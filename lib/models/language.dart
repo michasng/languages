@@ -1,3 +1,5 @@
+typedef LanguagePair = ({Language origin, Language target});
+
 enum Language {
   german('de-DE', 'Deutsch'),
   englishUs('en-US', 'English (US)'),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
+import 'package:languages/models/app_model.dart';
 import 'package:languages/models/dictionary.dart' as dictionary_model;
-import 'package:languages/models/language.dart';
 import 'package:languages/routes/dictionary/components/translation_field.dart';
 import 'package:micha_core/micha_core.dart';
 
@@ -12,18 +13,10 @@ class Dictionary extends StatefulWidget {
 }
 
 class _DictionaryState extends State<Dictionary> {
-  late dictionary_model.Dictionary dictionary;
-
-  @override
-  void initState() {
-    super.initState();
-
-    dictionary = dictionary_model.Dictionary(
-      originLanguage: Language.german,
-      targetLanguage: Language.russian,
-      translations: Set.unmodifiable({}),
-    );
-  }
+  dictionary_model.Dictionary get dictionary =>
+      GetIt.I<AppModel>().activeDictionary;
+  set dictionary(dictionary_model.Dictionary value) =>
+      GetIt.I<AppModel>().activeDictionary = value;
 
   void _speak(String phrase) {}
 
@@ -32,18 +25,16 @@ class _DictionaryState extends State<Dictionary> {
     return ListView(
       children: [
         TranslationField(
-          originLanguage: dictionary.originLanguage,
-          targetLanguage: dictionary.targetLanguage,
-          addTranslation: (translation) {
-            setState(
-              () => dictionary = dictionary.copyWith(
-                translations: Set.unmodifiable({
-                  ...dictionary.translations,
-                  translation,
-                }),
-              ),
-            );
-          },
+          originLanguage: dictionary.languages.origin,
+          targetLanguage: dictionary.languages.target,
+          addTranslation: (translation) => setState(
+            () => dictionary = dictionary.copyWith(
+              translations: {
+                ...dictionary.translations,
+                translation,
+              },
+            ),
+          ),
         ),
         for (final translation in dictionary.translations)
           ListTile(
@@ -55,14 +46,13 @@ class _DictionaryState extends State<Dictionary> {
               icon: const Icon(Icons.volume_up),
             ),
             trailing: IconButton(
-              onPressed: () => setState(() {
-                dictionary = dictionary.copyWith(
-                  translations: Set.unmodifiable(
-                    dictionary.translations
-                        .where((item) => item != translation),
-                  ),
-                );
-              }),
+              onPressed: () => setState(
+                () => dictionary = dictionary.copyWith(
+                  translations: dictionary.translations
+                      .where((item) => item != translation)
+                      .toSet(),
+                ),
+              ),
               icon: const Icon(Icons.delete),
             ),
           ),

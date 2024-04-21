@@ -7,8 +7,7 @@ part 'dictionary.freezed.dart';
 @freezed
 class Dictionary with _$Dictionary {
   const factory Dictionary({
-    required Language originLanguage,
-    required Language targetLanguage,
+    required LanguagePair languages,
     required Set<Translation> translations,
   }) = _Dictionary;
 }
