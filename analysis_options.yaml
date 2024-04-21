@@ -6,6 +6,11 @@ analyzer:
     strict-raw-types: true
   plugins:
     - custom_lint
+  exclude:
+    - "**.freezed.dart"
+    - "**.g.dart"
+    - "**.gr.dart"
+    - "**/generated_plugin_registrant.dart"
 linter:
   rules:
     prefer_single_quotes: true
