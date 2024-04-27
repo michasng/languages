@@ -39,8 +39,37 @@ class _DictionaryState extends State<Dictionary> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    final translations = _dictionary.translations.toList();
+    return Column(
       children: [
+        Expanded(
+          child: ListView.builder(
+            itemCount: translations.length,
+            itemBuilder: (context, index) {
+              final translation = translations[index];
+
+              return ListTile(
+                key: ValueKey(translation),
+                title: Text(translation.targetPhrase),
+                subtitle: Text(translation.originPhrase),
+                leading: IconButton(
+                  onPressed: () => _speak(translation.targetPhrase),
+                  icon: const Icon(Icons.volume_up),
+                ),
+                trailing: IconButton(
+                  onPressed: () => setState(
+                    () => _dictionary = _dictionary.copyWith(
+                      translations: _dictionary.translations
+                          .where((item) => item != translation)
+                          .toSet(),
+                    ),
+                  ),
+                  icon: const Icon(Icons.delete),
+                ),
+              );
+            },
+          ),
+        ),
         TranslationField(
           originLanguage: _dictionary.languages.origin,
           targetLanguage: _dictionary.languages.target,
@@ -53,26 +82,6 @@ class _DictionaryState extends State<Dictionary> {
             ),
           ),
         ),
-        for (final translation in _dictionary.translations)
-          ListTile(
-            key: ValueKey(translation),
-            title: Text(translation.targetPhrase),
-            subtitle: Text(translation.originPhrase),
-            leading: IconButton(
-              onPressed: () => _speak(translation.targetPhrase),
-              icon: const Icon(Icons.volume_up),
-            ),
-            trailing: IconButton(
-              onPressed: () => setState(
-                () => _dictionary = _dictionary.copyWith(
-                  translations: _dictionary.translations
-                      .where((item) => item != translation)
-                      .toSet(),
-                ),
-              ),
-              icon: const Icon(Icons.delete),
-            ),
-          ),
       ].separated(const Gap()),
     );
   }
