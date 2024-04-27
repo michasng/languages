@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:languages/components/navigation_app_bar.dart';
 import 'package:languages/routes/dictionary/components/dictionary.dart';
 
 class DictionaryPage extends StatelessWidget {
@@ -6,8 +7,9 @@ class DictionaryPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Padding(
+    return Scaffold(
+      appBar: NavigationAppBar(),
+      body: const Padding(
         padding: EdgeInsets.all(16),
         child: Dictionary(),
       ),
