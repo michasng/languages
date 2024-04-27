@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:languages/models/dictionary.dart';
+import 'package:languages/models/game/emoji.dart';
 import 'package:languages/models/language.dart';
 import 'package:languages/models/to_json.dart';
 
@@ -12,6 +13,7 @@ class AppModel with _$AppModel implements ToJson {
 
   factory AppModel({
     required LanguagePair languages,
+    required Set<Emoji> emojis,
     required Set<Dictionary> dictionaries,
   }) = _AppModel;
 
