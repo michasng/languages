@@ -29,6 +29,7 @@ class _MemoryGameState extends State<MemoryGame> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     const minCardWidth = 200;
     final width = MediaQuery.of(context).size.width;
     final textToSpeech = GetIt.I<TextToSpeech>();
@@ -41,6 +42,7 @@ class _MemoryGameState extends State<MemoryGame> {
       children: [
         for (final card in _model.cards)
           Card(
+            color: card.isMatched ? theme.colorScheme.primary : null,
             child: InkWell(
               onTapUp: (_) {
                 setState(() {
