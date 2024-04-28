@@ -23,7 +23,8 @@ class _MemoryGameState extends State<MemoryGame> {
 
     final appModelRepository = GetIt.I<LocalStorageRepository<AppModel>>();
     final appModel = appModelRepository.getOrDefault();
-    _model = MemoryModel(appModel.terms.take(8).toSet());
+    final shuffledTerms = appModel.terms.toList()..shuffle();
+    _model = MemoryModel(shuffledTerms.take(8).toSet());
   }
 
   @override

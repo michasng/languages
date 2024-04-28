@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:micha_core/micha_core.dart';
 
 class MemoryCardModel<T> {
@@ -24,7 +22,7 @@ class MemoryModel<T> {
     cardCopyCount.times(
       (_) => _cards.addAll(uniqueValues.map((value) => MemoryCardModel(value))),
     );
-    _cards.shuffle(Random());
+    _cards.shuffle();
   }
 
   void onTapCard(MemoryCardModel<T> card) {
