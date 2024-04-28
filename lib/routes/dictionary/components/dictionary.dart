@@ -17,12 +17,6 @@ class _DictionaryState extends State<Dictionary> {
   final _appModelRepository = GetIt.I<LocalStorageRepository<AppModel>>();
   final _textToSpeech = GetIt.I<TextToSpeech>();
 
-  Future<void> _speak(String phrase) async {
-    final appModel = _appModelRepository.getOrDefault();
-    _textToSpeech.setLanguage(appModel.languages.target.code);
-    _textToSpeech.speak(phrase);
-  }
-
   @override
   Widget build(BuildContext context) {
     final appModel = _appModelRepository.getOrDefault();
@@ -41,7 +35,7 @@ class _DictionaryState extends State<Dictionary> {
                 title: Text(term.target),
                 subtitle: Text(term.origin),
                 leading: IconButton(
-                  onPressed: () => _speak(term.target),
+                  onPressed: () => _textToSpeech.speak(term.target),
                   icon: const Icon(Icons.volume_up),
                 ),
                 trailing: IconButton(

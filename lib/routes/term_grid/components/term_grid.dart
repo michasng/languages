@@ -26,10 +26,7 @@ class TermGrid extends StatelessWidget {
         for (final term in appModel.terms)
           Card(
             child: InkWell(
-              onTap: () {
-                textToSpeech.setLanguage(appModel.languages.target.code);
-                textToSpeech.speak(term.target);
-              },
+              onTap: () => textToSpeech.speak(term.target),
               child: TermWidget(term: term),
             ),
           ),

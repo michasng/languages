@@ -5,6 +5,7 @@ import 'package:languages/models/app_model.dart';
 import 'package:languages/models/term.dart';
 import 'package:languages/routes/memory/components/memory_model.dart';
 import 'package:languages/services/local_storage_repository.dart';
+import 'package:text_to_speech/text_to_speech.dart';
 
 class MemoryGame extends StatefulWidget {
   const MemoryGame({super.key});
@@ -29,6 +30,7 @@ class _MemoryGameState extends State<MemoryGame> {
   Widget build(BuildContext context) {
     const minCardWidth = 200;
     final width = MediaQuery.of(context).size.width;
+    final textToSpeech = GetIt.I<TextToSpeech>();
 
     return GridView.count(
       padding: const EdgeInsets.all(16),
@@ -43,6 +45,7 @@ class _MemoryGameState extends State<MemoryGame> {
                 setState(() {
                   _model.onTapCard(card);
                 });
+                textToSpeech.speak(card.value.target);
               },
               child: card.isFaceUp
                   ? TermWidget(

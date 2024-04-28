@@ -36,7 +36,16 @@ Future<void> _initDependencies() async {
     ),
     dependsOn: [LocalStorage],
   );
-  getIt.registerSingleton(TextToSpeech());
+  getIt.registerSingletonWithDependencies(
+    () {
+      final textToSpeech = TextToSpeech();
+      final appModelRepository = getIt<LocalStorageRepository<AppModel>>();
+      final appModel = appModelRepository.getOrDefault();
+      textToSpeech.setLanguage(appModel.languages.target.code);
+      return textToSpeech;
+    },
+    dependsOn: [LocalStorageRepository<AppModel>],
+  );
 
   await getIt.allReady();
 }
