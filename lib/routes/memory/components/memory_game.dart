@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:languages/components/term_widget.dart';
 import 'package:languages/models/app_model.dart';
-import 'package:languages/models/game/emoji.dart';
+import 'package:languages/models/term.dart';
 import 'package:languages/routes/memory/components/memory_model.dart';
 import 'package:languages/services/local_storage_repository.dart';
 
@@ -13,7 +14,7 @@ class MemoryGame extends StatefulWidget {
 }
 
 class _MemoryGameState extends State<MemoryGame> {
-  late MemoryModel<Emoji> _model;
+  late MemoryModel<Term> _model;
 
   @override
   void initState() {
@@ -21,7 +22,7 @@ class _MemoryGameState extends State<MemoryGame> {
 
     final appModelRepository = GetIt.I<LocalStorageRepository<AppModel>>();
     final appModel = appModelRepository.getOrDefault();
-    _model = MemoryModel(appModel.emojis.take(8).toSet());
+    _model = MemoryModel(appModel.terms.take(8).toSet());
   }
 
   @override
@@ -43,7 +44,11 @@ class _MemoryGameState extends State<MemoryGame> {
                   _model.onTapCard(card);
                 });
               },
-              child: card.isFaceUp ? Image.asset(card.value.assetPath) : null,
+              child: card.isFaceUp
+                  ? TermWidget(
+                      term: card.value,
+                    )
+                  : null,
             ),
           ),
       ],

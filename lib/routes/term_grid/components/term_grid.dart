@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:languages/components/term_widget.dart';
 import 'package:languages/models/app_model.dart';
-import 'package:languages/routes/emoji_grid/components/emoji_card.dart';
 import 'package:languages/services/local_storage_repository.dart';
 import 'package:text_to_speech/text_to_speech.dart';
 
-class EmojiGrid extends StatelessWidget {
-  const EmojiGrid({super.key});
+class TermGrid extends StatelessWidget {
+  const TermGrid({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,13 +23,15 @@ class EmojiGrid extends StatelessWidget {
       mainAxisSpacing: 8,
       crossAxisSpacing: 8,
       children: [
-        for (final emoji in appModel.emojis)
-          EmojiCard(
-            emoji: emoji,
-            onTap: () {
-              textToSpeech.setLanguage(appModel.languages.target.code);
-              textToSpeech.speak(emoji.name.targetPhrase);
-            },
+        for (final term in appModel.terms)
+          Card(
+            child: InkWell(
+              onTap: () {
+                textToSpeech.setLanguage(appModel.languages.target.code);
+                textToSpeech.speak(term.target);
+              },
+              child: TermWidget(term: term),
+            ),
           ),
       ],
     );

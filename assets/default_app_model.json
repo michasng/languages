@@ -1,315 +1,150 @@
 {
   "languages": { "origin": "german", "target": "russian" },
-  "emojis": [
+  "terms": [
     {
-      "assetPath": "emoji/emoji_u1f4a3.png",
-      "name": {
-        "originPhrase": "Bombe",
-        "targetPhrase": "бомба"
-      }
+      "origin": "Bombe",
+      "target": "бомба",
+      "assetPath": "emoji/emoji_u1f4a3.png"
     },
     {
-      "assetPath": "emoji/emoji_u1f408.png",
-      "name": {
-        "originPhrase": "Katze",
-        "targetPhrase": "кошка"
-      }
+      "origin": "Katze",
+      "target": "кошка",
+      "assetPath": "emoji/emoji_u1f408.png"
     },
     {
-      "assetPath": "emoji/emoji_u1f407.png",
-      "name": {
-        "originPhrase": "Kaninchen",
-        "targetPhrase": "кролик"
-      }
+      "origin": "Kaninchen",
+      "target": "кролик",
+      "assetPath": "emoji/emoji_u1f407.png"
     },
     {
-      "assetPath": "emoji/emoji_u1f415.png",
-      "name": {
-        "originPhrase": "Hund",
-        "targetPhrase": "собака"
-      }
+      "origin": "Hund",
+      "target": "собака",
+      "assetPath": "emoji/emoji_u1f415.png"
     },
     {
-      "assetPath": "emoji/emoji_u1f401.png",
-      "name": {
-        "originPhrase": "Maus",
-        "targetPhrase": "мышь"
-      }
+      "origin": "Maus",
+      "target": "мышь",
+      "assetPath": "emoji/emoji_u1f401.png"
     },
     {
-      "assetPath": "emoji/emoji_u1f416.png",
-      "name": {
-        "originPhrase": "Schwein",
-        "targetPhrase": "свинья"
-      }
+      "origin": "Schwein",
+      "target": "свинья",
+      "assetPath": "emoji/emoji_u1f416.png"
     },
     {
-      "assetPath": "emoji/emoji_u1f426.png",
-      "name": {
-        "originPhrase": "Vogel",
-        "targetPhrase": "птица"
-      }
+      "origin": "Vogel",
+      "target": "птица",
+      "assetPath": "emoji/emoji_u1f426.png"
     },
     {
-      "assetPath": "emoji/emoji_u1f404.png",
-      "name": {
-        "originPhrase": "Kuh",
-        "targetPhrase": "корова"
-      }
+      "origin": "Kuh",
+      "target": "корова",
+      "assetPath": "emoji/emoji_u1f404.png"
     },
     {
-      "assetPath": "emoji/emoji_u1f412.png",
-      "name": {
-        "originPhrase": "Affe",
-        "targetPhrase": "обезьяна"
-      }
+      "origin": "Affe",
+      "target": "обезьяна",
+      "assetPath": "emoji/emoji_u1f412.png"
     },
     {
-      "assetPath": "emoji/emoji_u1f40e.png",
-      "name": {
-        "originPhrase": "Pferd",
-        "targetPhrase": "лошадь"
-      }
+      "origin": "Pferd",
+      "target": "лошадь",
+      "assetPath": "emoji/emoji_u1f40e.png"
     },
     {
-      "assetPath": "emoji/emoji_u1f986.png",
-      "name": {
-        "originPhrase": "Ente",
-        "targetPhrase": "утка"
-      }
+      "origin": "Ente",
+      "target": "утка",
+      "assetPath": "emoji/emoji_u1f986.png"
     },
     {
-      "assetPath": "emoji/emoji_u1f99f.png",
-      "name": {
-        "originPhrase": "Mücke",
-        "targetPhrase": "комар"
-      }
+      "origin": "Mücke",
+      "target": "комар",
+      "assetPath": "emoji/emoji_u1f99f.png"
     },
     {
-      "assetPath": "emoji/emoji_u1f41f.png",
-      "name": {
-        "originPhrase": "Fisch",
-        "targetPhrase": "рыба"
-      }
+      "origin": "Fisch",
+      "target": "рыба",
+      "assetPath": "emoji/emoji_u1f41f.png"
     },
     {
-      "assetPath": "emoji/emoji_u1f40a.png",
-      "name": {
-        "originPhrase": "Krokodil",
-        "targetPhrase": "крокодил"
-      }
+      "origin": "Krokodil",
+      "target": "крокодил",
+      "assetPath": "emoji/emoji_u1f40a.png"
     },
     {
-      "assetPath": "emoji/emoji_u1f43f.png",
-      "name": {
-        "originPhrase": "Eichhörnchen",
-        "targetPhrase": "белка"
-      }
+      "origin": "Eichhörnchen",
+      "target": "белка",
+      "assetPath": "emoji/emoji_u1f43f.png"
     },
     {
-      "assetPath": "emoji/emoji_u1f41d.png",
-      "name": {
-        "originPhrase": "Biene",
-        "targetPhrase": "пчела"
-      }
+      "origin": "Biene",
+      "target": "пчела",
+      "assetPath": "emoji/emoji_u1f41d.png"
     },
     {
-      "assetPath": "emoji/emoji_u1f40d.png",
-      "name": {
-        "originPhrase": "Schlange",
-        "targetPhrase": "змея"
-      }
+      "origin": "Schlange",
+      "target": "змея",
+      "assetPath": "emoji/emoji_u1f40d.png"
     },
     {
-      "assetPath": "emoji/emoji_u1f414.png",
-      "name": {
-        "originPhrase": "Huhn",
-        "targetPhrase": "курица"
-      }
+      "origin": "Huhn",
+      "target": "курица",
+      "assetPath": "emoji/emoji_u1f414.png"
     },
     {
-      "assetPath": "emoji/emoji_u1f413.png",
-      "name": {
-        "originPhrase": "Hahn",
-        "targetPhrase": "петух"
-      }
+      "origin": "Hahn",
+      "target": "петух",
+      "assetPath": "emoji/emoji_u1f413.png"
     },
     {
-      "assetPath": "emoji/emoji_u1f405.png",
-      "name": {
-        "originPhrase": "Tiger",
-        "targetPhrase": "тигр"
-      }
+      "origin": "Tiger",
+      "target": "тигр",
+      "assetPath": "emoji/emoji_u1f405.png"
     },
     {
-      "assetPath": "emoji/emoji_u1f406.png",
-      "name": {
-        "originPhrase": "Leopard",
-        "targetPhrase": "леопард"
-      }
+      "origin": "Leopard",
+      "target": "леопард",
+      "assetPath": "emoji/emoji_u1f406.png"
     },
     {
-      "assetPath": "emoji/emoji_u1f422.png",
-      "name": {
-        "originPhrase": "Schildkröte",
-        "targetPhrase": "черепаха"
-      }
+      "origin": "Schildkröte",
+      "target": "черепаха",
+      "assetPath": "emoji/emoji_u1f422.png"
     },
     {
-      "assetPath": "emoji/emoji_u1f423.png",
-      "name": {
-        "originPhrase": "Küken",
-        "targetPhrase": "цыпленок"
-      }
+      "origin": "Küken",
+      "target": "цыпленок",
+      "assetPath": "emoji/emoji_u1f423.png"
     },
     {
-      "assetPath": "emoji/emoji_u1f427.png",
-      "name": {
-        "originPhrase": "Pinguin",
-        "targetPhrase": "пингвин"
-      }
+      "origin": "Pinguin",
+      "target": "пингвин",
+      "assetPath": "emoji/emoji_u1f427.png"
     },
     {
-      "assetPath": "emoji/emoji_u1f409.png",
-      "name": {
-        "originPhrase": "Drache",
-        "targetPhrase": "дракон"
-      }
+      "origin": "Drache",
+      "target": "дракон",
+      "assetPath": "emoji/emoji_u1f409.png"
     },
     {
-      "assetPath": "emoji/emoji_u1f418.png",
-      "name": {
-        "originPhrase": "Elephant",
-        "targetPhrase": "слон"
-      }
+      "origin": "Elephant",
+      "target": "слон",
+      "assetPath": "emoji/emoji_u1f418.png"
     },
     {
-      "assetPath": "emoji/emoji_u1f411.png",
-      "name": {
-        "originPhrase": "Schaf",
-        "targetPhrase": "овца"
-      }
+      "origin": "Schaf",
+      "target": "овца",
+      "assetPath": "emoji/emoji_u1f411.png"
     },
     {
-      "assetPath": "emoji/emoji_u1fab0.png",
-      "name": {
-        "originPhrase": "Fliege",
-        "targetPhrase": "муха"
-      }
+      "origin": "Fliege",
+      "target": "муха",
+      "assetPath": "emoji/emoji_u1fab0.png"
     },
     {
-      "assetPath": "emoji/emoji_u1f988.png",
-      "name": {
-        "originPhrase": "Hai",
-        "targetPhrase": "акула"
-      }
-    }
-  ],
-  "dictionaries": [
-    {
-      "languages": { "origin": "german", "target": "russian" },
-      "translations": [
-        { "originPhrase": "und", "targetPhrase": "и" },
-        { "originPhrase": "in", "targetPhrase": "в" },
-        { "originPhrase": "nicht", "targetPhrase": "не" },
-        { "originPhrase": "was", "targetPhrase": "что" },
-        { "originPhrase": "er", "targetPhrase": "он" },
-        { "originPhrase": "auf", "targetPhrase": "на" },
-        { "originPhrase": "sein", "targetPhrase": "быть" },
-        { "originPhrase": "ich", "targetPhrase": "я" },
-        { "originPhrase": "mit", "targetPhrase": "с" },
-        { "originPhrase": "sie (Plural)", "targetPhrase": "они" },
-        { "originPhrase": "aber", "targetPhrase": "а" },
-        { "originPhrase": "alle", "targetPhrase": "весь" },
-        { "originPhrase": "das", "targetPhrase": "это" },
-        { "originPhrase": "so", "targetPhrase": "так" },
-        { "originPhrase": "seine", "targetPhrase": "его" },
-        { "originPhrase": "über", "targetPhrase": "о" },
-        { "originPhrase": "Sie (Höflichkeitsform)", "targetPhrase": "Вы" },
-        { "originPhrase": "ihr", "targetPhrase": "вы" },
-        { "originPhrase": "zu", "targetPhrase": "к" },
-        { "originPhrase": "von", "targetPhrase": "от" },
-        { "originPhrase": "hinter", "targetPhrase": "за" },
-        { "originPhrase": "wie", "targetPhrase": "как" },
-        { "originPhrase": "leben", "targetPhrase": "жить" },
-        { "originPhrase": "bei", "targetPhrase": "у" },
-        { "originPhrase": "du", "targetPhrase": "ты" },
-        { "originPhrase": "eins", "targetPhrase": "один" },
-        { "originPhrase": "welcher", "targetPhrase": "который" },
-        { "originPhrase": "wir", "targetPhrase": "мы" },
-        { "originPhrase": "Jahr", "targetPhrase": "год" },
-        { "originPhrase": "wenn", "targetPhrase": "если" },
-        { "originPhrase": "können", "targetPhrase": "мочь" },
-        { "originPhrase": "hier", "targetPhrase": "вот" },
-        { "originPhrase": "gehen", "targetPhrase": "идти" },
-        { "originPhrase": "sie (Singular)", "targetPhrase": "она" },
-        { "originPhrase": "Angelegenheit", "targetPhrase": "дело" },
-        { "originPhrase": "groß", "targetPhrase": "большой" },
-        { "originPhrase": "anderer", "targetPhrase": "другой" },
-        { "originPhrase": "mein", "targetPhrase": "мой" },
-        { "originPhrase": "Ort", "targetPhrase": "место" },
-        { "originPhrase": "Zeit", "targetPhrase": "время" },
-        { "originPhrase": "Hand", "targetPhrase": "рука" },
-        { "originPhrase": "ohne", "targetPhrase": "без" },
-        { "originPhrase": "arbeiten", "targetPhrase": "работать" },
-        { "originPhrase": "Leben", "targetPhrase": "жизнь" },
-        { "originPhrase": "sehen", "targetPhrase": "видеть" },
-        { "originPhrase": "Tag", "targetPhrase": "день" },
-        { "originPhrase": "neu", "targetPhrase": "новый" },
-        { "originPhrase": "Kind", "targetPhrase": "ребенок" },
-        { "originPhrase": "dann", "targetPhrase": "потом" },
-        { "originPhrase": "werden", "targetPhrase": "стать" },
-        { "originPhrase": "sprechen", "targetPhrase": "говорить" },
-        { "originPhrase": "sogar", "targetPhrase": "даже" },
-        { "originPhrase": "selbst", "targetPhrase": "сам" },
-        { "originPhrase": "lieben", "targetPhrase": "любить" },
-        { "originPhrase": "stehen", "targetPhrase": "стоять" },
-        { "originPhrase": "denken", "targetPhrase": "думать" },
-        { "originPhrase": "sein", "targetPhrase": "свой" },
-        { "originPhrase": "wo", "targetPhrase": "где" },
-        { "originPhrase": "jetzt", "targetPhrase": "сейчас" },
-        { "originPhrase": "nichts", "targetPhrase": "ничто" },
-        { "originPhrase": "solch", "targetPhrase": "такой" },
-        { "originPhrase": "Auge", "targetPhrase": "глаз" },
-        { "originPhrase": "nun", "targetPhrase": "ну" },
-        { "originPhrase": "fragen", "targetPhrase": "спросить" },
-        { "originPhrase": "Haus", "targetPhrase": "дом" },
-        { "originPhrase": "geben", "targetPhrase": "дать" },
-        { "originPhrase": "wollen", "targetPhrase": "хотеть" },
-        { "originPhrase": "Seite", "targetPhrase": "сторона" },
-        { "originPhrase": "überhaupt", "targetPhrase": "вообще" },
-        { "originPhrase": "wissen", "targetPhrase": "знать" },
-        { "originPhrase": "recht", "targetPhrase": "право" },
-        { "originPhrase": "Kraft", "targetPhrase": "сила" },
-        { "originPhrase": "geben", "targetPhrase": "давать" },
-        { "originPhrase": "schließlich", "targetPhrase": "ведь" },
-        { "originPhrase": "erster", "targetPhrase": "первый" },
-        { "originPhrase": "schauen", "targetPhrase": "смотреть" },
-        { "originPhrase": "müssen", "targetPhrase": "надо" },
-        { "originPhrase": "einige", "targetPhrase": "несколько" },
-        { "originPhrase": "machen", "targetPhrase": "сделать" },
-        { "originPhrase": "denn", "targetPhrase": "ведь" },
-        { "originPhrase": "einfach", "targetPhrase": "просто" },
-        { "originPhrase": "Mensch", "targetPhrase": "человек" },
-        { "originPhrase": "finden", "targetPhrase": "найти" },
-        { "originPhrase": "in der Nähe", "targetPhrase": "рядом" },
-        { "originPhrase": "Wort", "targetPhrase": "слово" },
-        { "originPhrase": "Freund", "targetPhrase": "друг" },
-        { "originPhrase": "Rede", "targetPhrase": "речь" },
-        { "originPhrase": "sitzen", "targetPhrase": "сидеть" },
-        { "originPhrase": "beginnen", "targetPhrase": "начать" },
-        { "originPhrase": "weiter", "targetPhrase": "дальше" },
-        { "originPhrase": "haben", "targetPhrase": "иметь" },
-        { "originPhrase": "Frage", "targetPhrase": "вопрос" },
-        { "originPhrase": "Geld", "targetPhrase": "деньги" },
-        { "originPhrase": "bedeuten", "targetPhrase": "значит" },
-        { "originPhrase": "Kopf", "targetPhrase": "голова" },
-        { "originPhrase": "Freunde", "targetPhrase": "друзья" },
-        { "originPhrase": "zurück", "targetPhrase": "назад" },
-        { "originPhrase": "zusammen", "targetPhrase": "вместе" },
-        { "originPhrase": "jeder", "targetPhrase": "каждый" },
-        { "originPhrase": "deshalb", "targetPhrase": "потому" }
-      ]
+      "origin": "Hai",
+      "target": "акула",
+      "assetPath": "emoji/emoji_u1f988.png"
     }
   ]
 }

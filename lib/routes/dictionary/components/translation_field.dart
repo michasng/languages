@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:languages/models/language.dart';
-import 'package:languages/models/translation.dart';
+import 'package:languages/models/term.dart';
 import 'package:micha_core/micha_core.dart';
 
 class TranslationField extends StatefulWidget {
-  final Language originLanguage;
-  final Language targetLanguage;
+  final LanguagePair languages;
 
-  final void Function(Translation translation) addTranslation;
+  final void Function(Term term) addTerm;
 
   const TranslationField({
     super.key,
-    required this.originLanguage,
-    required this.targetLanguage,
-    required this.addTranslation,
+    required this.languages,
+    required this.addTerm,
   });
 
   @override
@@ -34,10 +32,10 @@ class _TranslationFieldState extends State<TranslationField> {
     if (formState == null || !formState.validate()) return;
     formState.save();
 
-    widget.addTranslation(
-      Translation(
-        originPhrase: _originPhrase,
-        targetPhrase: _targetPhrase,
+    widget.addTerm(
+      Term(
+        origin: _originPhrase,
+        target: _targetPhrase,
       ),
     );
     _clear();
@@ -60,7 +58,7 @@ class _TranslationFieldState extends State<TranslationField> {
                 TextFormField(
                   controller: _originTextController,
                   decoration: InputDecoration(
-                    labelText: widget.originLanguage.displayName,
+                    labelText: widget.languages.origin.displayName,
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -73,7 +71,7 @@ class _TranslationFieldState extends State<TranslationField> {
                 TextFormField(
                   controller: _targetTextController,
                   decoration: InputDecoration(
-                    labelText: widget.targetLanguage.displayName,
+                    labelText: widget.languages.target.displayName,
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {

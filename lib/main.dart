@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get_it/get_it.dart';
 import 'package:languages/models/app_model.dart';
-import 'package:languages/routes/emoji_grid/emoji_grid_page.dart';
+import 'package:languages/routes/term_grid/term_grid_page.dart';
 import 'package:languages/services/local_storage_repository.dart';
 import 'package:localstorage/localstorage.dart';
 import 'package:text_to_speech/text_to_speech.dart';
@@ -49,7 +49,7 @@ class _App extends StatelessWidget {
     return MaterialApp(
       title: 'Languages',
       debugShowCheckedModeBanner: false,
-      home: const EmojiGridPage(),
+      home: const TermGridPage(),
       theme: ThemeData(
         inputDecorationTheme: const InputDecorationTheme(
           border: OutlineInputBorder(),
