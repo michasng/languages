@@ -23,8 +23,8 @@ class _TranslationFieldState extends State<TranslationField> {
   final _originTextController = TextEditingController();
   final _targetTextController = TextEditingController();
 
-  String _originPhrase = '';
-  String _targetPhrase = '';
+  String _origin = '';
+  String _target = '';
 
   void _submit() {
     final formState = _formKey.currentState;
@@ -34,8 +34,8 @@ class _TranslationFieldState extends State<TranslationField> {
 
     widget.addTerm(
       Term(
-        origin: _originPhrase,
-        target: _targetPhrase,
+        origin: _origin,
+        target: _target,
       ),
     );
     _clear();
@@ -66,7 +66,7 @@ class _TranslationFieldState extends State<TranslationField> {
                     }
                     return null;
                   },
-                  onSaved: (value) => _originPhrase = value ?? '',
+                  onSaved: (value) => _origin = value ?? '',
                 ),
                 TextFormField(
                   controller: _targetTextController,
@@ -79,7 +79,7 @@ class _TranslationFieldState extends State<TranslationField> {
                     }
                     return null;
                   },
-                  onSaved: (value) => _targetPhrase = value ?? '',
+                  onSaved: (value) => _target = value ?? '',
                 ),
               ].separated(const Gap()),
             ),
