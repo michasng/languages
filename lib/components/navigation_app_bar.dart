@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:languages/routes/dictionary/dictionary_page.dart';
 import 'package:languages/routes/emoji_grid/emoji_grid_page.dart';
+import 'package:languages/routes/memory/memory_page.dart';
 import 'package:micha_core/micha_core.dart';
 
 class NavigationAppBar extends AppBar {
@@ -29,6 +30,20 @@ class NavigationAppBar extends AppBar {
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute<void>(
                         builder: (context) => const EmojiGridPage(),
+                      ),
+                    );
+                  },
+                );
+              },
+            ),
+            Builder(
+              builder: (context) {
+                return IconButton(
+                  icon: const Icon(Icons.looks_two),
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute<void>(
+                        builder: (context) => const MemoryPage(),
                       ),
                     );
                   },

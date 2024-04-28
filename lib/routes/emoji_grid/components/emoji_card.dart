@@ -14,9 +14,9 @@ class EmojiCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Card(
+    return Card(
+      child: InkWell(
+        onTap: onTap,
         child: Stack(
           alignment: Alignment.center,
           children: [

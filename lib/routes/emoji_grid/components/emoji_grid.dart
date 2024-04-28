@@ -14,11 +14,14 @@ class EmojiGrid extends StatelessWidget {
     final appModel = appModelRepository.getOrDefault();
     final textToSpeech = GetIt.I<TextToSpeech>();
 
+    const minCardWidth = 200;
+    final width = MediaQuery.of(context).size.width;
+
     return GridView.count(
       padding: const EdgeInsets.all(16),
-      crossAxisSpacing: 8,
+      crossAxisCount: (width / minCardWidth).floor(),
       mainAxisSpacing: 8,
-      crossAxisCount: 4,
+      crossAxisSpacing: 8,
       children: [
         for (final emoji in appModel.emojis)
           EmojiCard(
