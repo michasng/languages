@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:languages/models/category.dart';
 import 'package:languages/models/language.dart';
 import 'package:languages/models/term.dart';
 import 'package:micha_core/micha_core.dart';
@@ -36,6 +37,10 @@ class _TranslationFieldState extends State<TranslationField> {
       Term(
         origin: _origin,
         target: _target,
+        category: const Category(
+          origin: 'Meine Wörter',
+          target: 'Мои слова',
+        ),
       ),
     );
     _clear();

@@ -4,146 +4,175 @@
     {
       "origin": "Bombe",
       "target": "бомба",
+      "category": { "origin": "Objekte", "target": "объе́кты" },
       "assetPath": "emoji/emoji_u1f4a3.png"
     },
     {
       "origin": "Katze",
       "target": "кошка",
+      "category": { "origin": "Tiere", "target": "живо́тные" },
       "assetPath": "emoji/emoji_u1f408.png"
     },
     {
       "origin": "Kaninchen",
       "target": "кролик",
+      "category": { "origin": "Tiere", "target": "живо́тные" },
       "assetPath": "emoji/emoji_u1f407.png"
     },
     {
       "origin": "Hund",
       "target": "собака",
+      "category": { "origin": "Tiere", "target": "живо́тные" },
       "assetPath": "emoji/emoji_u1f415.png"
     },
     {
       "origin": "Maus",
       "target": "мышь",
+      "category": { "origin": "Tiere", "target": "живо́тные" },
       "assetPath": "emoji/emoji_u1f401.png"
     },
     {
       "origin": "Schwein",
       "target": "свинья",
+      "category": { "origin": "Tiere", "target": "живо́тные" },
       "assetPath": "emoji/emoji_u1f416.png"
     },
     {
       "origin": "Vogel",
       "target": "птица",
+      "category": { "origin": "Tiere", "target": "живо́тные" },
       "assetPath": "emoji/emoji_u1f426.png"
     },
     {
       "origin": "Kuh",
       "target": "корова",
+      "category": { "origin": "Tiere", "target": "живо́тные" },
       "assetPath": "emoji/emoji_u1f404.png"
     },
     {
       "origin": "Affe",
       "target": "обезьяна",
+      "category": { "origin": "Tiere", "target": "живо́тные" },
       "assetPath": "emoji/emoji_u1f412.png"
     },
     {
       "origin": "Pferd",
       "target": "лошадь",
+      "category": { "origin": "Tiere", "target": "живо́тные" },
       "assetPath": "emoji/emoji_u1f40e.png"
     },
     {
       "origin": "Ente",
       "target": "утка",
+      "category": { "origin": "Tiere", "target": "живо́тные" },
       "assetPath": "emoji/emoji_u1f986.png"
     },
     {
       "origin": "Mücke",
       "target": "комар",
+      "category": { "origin": "Tiere", "target": "живо́тные" },
       "assetPath": "emoji/emoji_u1f99f.png"
     },
     {
       "origin": "Fisch",
       "target": "рыба",
+      "category": { "origin": "Tiere", "target": "живо́тные" },
       "assetPath": "emoji/emoji_u1f41f.png"
     },
     {
       "origin": "Krokodil",
       "target": "крокодил",
+      "category": { "origin": "Tiere", "target": "живо́тные" },
       "assetPath": "emoji/emoji_u1f40a.png"
     },
     {
       "origin": "Eichhörnchen",
       "target": "белка",
+      "category": { "origin": "Tiere", "target": "живо́тные" },
       "assetPath": "emoji/emoji_u1f43f.png"
     },
     {
       "origin": "Biene",
       "target": "пчела",
+      "category": { "origin": "Tiere", "target": "живо́тные" },
       "assetPath": "emoji/emoji_u1f41d.png"
     },
     {
       "origin": "Schlange",
       "target": "змея",
+      "category": { "origin": "Tiere", "target": "живо́тные" },
       "assetPath": "emoji/emoji_u1f40d.png"
     },
     {
       "origin": "Huhn",
       "target": "курица",
+      "category": { "origin": "Tiere", "target": "живо́тные" },
       "assetPath": "emoji/emoji_u1f414.png"
     },
     {
       "origin": "Hahn",
       "target": "петух",
+      "category": { "origin": "Tiere", "target": "живо́тные" },
       "assetPath": "emoji/emoji_u1f413.png"
     },
     {
       "origin": "Tiger",
       "target": "тигр",
+      "category": { "origin": "Tiere", "target": "живо́тные" },
       "assetPath": "emoji/emoji_u1f405.png"
     },
     {
       "origin": "Leopard",
       "target": "леопард",
+      "category": { "origin": "Tiere", "target": "живо́тные" },
       "assetPath": "emoji/emoji_u1f406.png"
     },
     {
       "origin": "Schildkröte",
       "target": "черепаха",
+      "category": { "origin": "Tiere", "target": "живо́тные" },
       "assetPath": "emoji/emoji_u1f422.png"
     },
     {
       "origin": "Küken",
       "target": "цыпленок",
+      "category": { "origin": "Tiere", "target": "живо́тные" },
       "assetPath": "emoji/emoji_u1f423.png"
     },
     {
       "origin": "Pinguin",
       "target": "пингвин",
+      "category": { "origin": "Tiere", "target": "живо́тные" },
       "assetPath": "emoji/emoji_u1f427.png"
     },
     {
       "origin": "Drache",
       "target": "дракон",
+      "category": { "origin": "Tiere", "target": "живо́тные" },
       "assetPath": "emoji/emoji_u1f409.png"
     },
     {
       "origin": "Elephant",
       "target": "слон",
+      "category": { "origin": "Tiere", "target": "живо́тные" },
       "assetPath": "emoji/emoji_u1f418.png"
     },
     {
       "origin": "Schaf",
       "target": "овца",
+      "category": { "origin": "Tiere", "target": "живо́тные" },
       "assetPath": "emoji/emoji_u1f411.png"
     },
     {
       "origin": "Fliege",
       "target": "муха",
+      "category": { "origin": "Tiere", "target": "живо́тные" },
       "assetPath": "emoji/emoji_u1fab0.png"
     },
     {
       "origin": "Hai",
       "target": "акула",
+      "category": { "origin": "Tiere", "target": "живо́тные" },
       "assetPath": "emoji/emoji_u1f988.png"
     }
   ]
