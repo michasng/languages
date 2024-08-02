@@ -13,7 +13,7 @@ class MemoryGame extends StatefulWidget {
 
   const MemoryGame({
     super.key,
-    this.uniqueCardCount = 8,
+    this.uniqueCardCount = 18,
   });
 
   @override
